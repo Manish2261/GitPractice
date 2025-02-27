@@ -1,0 +1,24 @@
+name: Create Release
+
+on:
+  push:
+    branches:      
+      - github-reusable-workflow
+
+
+jobs:
+  create-release:
+    runs-on: [self-hosted, ubuntu]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create release
+        uses: actions/create-release@v1
+
+        with:
+          github_token: ${{ github.token }}
+          tag_name: v1.0
+          release_name: 'Its a testing release'
+          draft: false
+          prerelease: false
