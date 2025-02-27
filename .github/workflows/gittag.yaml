@@ -3,7 +3,7 @@ name: Create Release
 on:
   push:
     branches:      
-      - github-reusable-workflow
+      - main
 
 
 jobs:
